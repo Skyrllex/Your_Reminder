@@ -1,6 +1,8 @@
-package com.example.yourreminder;
+package com.example.yourreminder.screens;
 
 import android.os.Bundle;
+
+import com.example.yourreminder.R;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;

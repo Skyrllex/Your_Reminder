@@ -1,4 +1,4 @@
-package com.example.yourreminder;
+package com.example.yourreminder.screens;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.yourreminder.R;
 import com.example.yourreminder.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {

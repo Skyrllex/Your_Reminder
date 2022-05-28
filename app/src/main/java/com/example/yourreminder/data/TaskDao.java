@@ -29,6 +29,9 @@ public interface TaskDao {
             " textsubtask LIKE :searchtext")
     Task findByText(String searchtext);
 
+    @Query("SELECT * FROM Task WHERE done=:done")
+    Task findByDone(boolean done);
+
 
     @Query("SELECT * FROM Task WHERE uid=:uid LIMIT 1")
     Task findById(int uid);
