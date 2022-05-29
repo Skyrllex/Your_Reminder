@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -15,12 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yourreminder.App;
 import com.example.yourreminder.R;
-import com.example.yourreminder.databinding.ActivityMainBinding;
 import com.example.yourreminder.module.Task;
 
 public class TaskDetailsActivity extends AppCompatActivity {
 
-    private static final String EXTRA_TASK = "TaskDetailsActivity .EXTRA_TASK";
+    private static final String EXTRA_TASK = "TaskDetailsActivity.EXTRA_TASK";
 
     private Task task;
 

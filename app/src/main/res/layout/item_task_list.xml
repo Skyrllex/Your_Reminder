@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingLeft="16sp"
     android:paddingRight="16sp"
-    android:grabity="center">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/taskItem"
@@ -21,14 +21,15 @@
         android:id="@+id/doneItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"/>
+        android:layout_marginStart="8dp"/>
 
     <ImageView
         android:id="@+id/deleteItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16sp"
         android:layout_gravity="center"
-        android:src="@android:drawable/ic_menu_delete"/>
+        android:layout_marginStart="16sp"
+        android:contentDescription="@string/deleteitem"
+        android:src="@drawable/imgonline_com_ua_resize_u5kzndmrof" />
 
 </LinearLayout>

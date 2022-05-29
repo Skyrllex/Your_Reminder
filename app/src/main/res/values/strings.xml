@@ -19,5 +19,6 @@
     <string name="text_priority">Priority lvl :</string>
     <string name="lvl">0</string>
     <string name="toolbar_edit">Edit task</string>
+    <string name="deleteitem">delete task</string>
 
 </resources>

@@ -1,30 +1,22 @@
 package com.example.yourreminder.screens.main;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yourreminder.R;
 import com.example.yourreminder.module.Task;
 import com.example.yourreminder.screens.details.TaskDetailsActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.yourreminder.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toolbar;
 
 import java.util.List;
 
@@ -46,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         Adapter adapter = new Adapter();
         recyclerView.setAdapter(adapter);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,15 +48,17 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();*/
             }
         });
+
+        MainViewModel mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel.getTaskLiveData().observe(this, new Observer<List<Task>>() {
+            @Override
+            public void onChanged(List<Task> tasks) {
+                adapter.setItems(tasks);
+            }
+        });
     }
 
-    MainViewModel mainViewModel= ViewModelProvider.of(this).get(MainViewModel.class);
-    mainViewModel.getTaskLiveData().observe(this, new Observer<List<Task>>(){
-       @Override
-       public void OnChanged(List<Task> tasks){
-            adapter.setItems(tasks);
-        }
-    });
+
     private void setSupportActionBar(Toolbar toolbar) {
     }
 

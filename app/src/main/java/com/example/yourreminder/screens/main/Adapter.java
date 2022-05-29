@@ -114,6 +114,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
             itemDone=itemView.findViewById(R.id.doneItem);
             itemDelete=itemView.findViewById(R.id.deleteItem);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TaskDetailsActivity.start((Activity) itemView.getContext(), task);
+                }
+            });
+
             itemDone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
@@ -122,13 +129,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
                         App.getInstance().getTaskDao().update(task);
                     }
                     updateStrokeOut();
-                }
-            });
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TaskDetailsActivity.start((Activity) itemView.getContext(), task)
                 }
             });
 
