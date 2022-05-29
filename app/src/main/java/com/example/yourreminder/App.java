@@ -16,7 +16,7 @@ public class App extends Application {
 
     public static  App getInstance(){
         return instance;
-    };
+    }
 
     @Override
     public void onCreate() {
@@ -25,8 +25,7 @@ public class App extends Application {
         instance = this;
 
         database = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "app-db-task").
-                allowMainThreadQueries()
+                AppDatabase.class, "app-db-task").allowMainThreadQueries()
                 .build();
 
         taskDao = database.taskDao();

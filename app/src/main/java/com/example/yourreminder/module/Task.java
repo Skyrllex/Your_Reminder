@@ -6,6 +6,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity
 public class Task implements Parcelable {
 
@@ -47,9 +49,8 @@ public class Task implements Parcelable {
         if (timectreate != task.timectreate) return false;
         if (calendar != task.calendar) return false;
         if (priority != task.priority) return false;
-        if (textsubtask != task.textsubtask) return false;
-        if (done != task.done);
-        return texttask != null ? texttask.equals(task.texttask) : task.texttask == null;
+        if (!textsubtask.equals(task.textsubtask)) return false;
+        return Objects.equals(texttask, task.texttask);
 
     }
 
@@ -61,7 +62,7 @@ public class Task implements Parcelable {
         result = (31 * result) + ((textsubtask != null) ? textsubtask.hashCode() : 0);
         result = (31 * result) + (int) (timectreate ^ (timectreate>>>32));
         result = (31 * result) + (int) (calendar ^ (calendar>>>32));
-        result = (31 * result) + (priority ^ (priority>>>32));
+        //result = (31 * result) + (priority ^ (priority>>>32));
         result = (31 * result) + (done ? 1 : 0);
 
         return result;
