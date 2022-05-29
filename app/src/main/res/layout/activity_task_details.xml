@@ -18,14 +18,14 @@
             app:popupTheme="@style/Theme.YourReminder.PopupOverlay" />
 
         <EditText
-            android:id="@+id/textTask"
+            android:id="@+id/editTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_task"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/textSubTask"
+            android:id="@+id/editSubTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8sp"
@@ -44,7 +44,7 @@
                 android:id="@+id/textpriority"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/textpriority" />
+                android:text="@string/text_priority" />
 
             <TextView
                 android:id="@+id/textlvl"
@@ -70,28 +70,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:hint="@string/dateandtime"
+                android:hint="@string/text_date_and_time"
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/setdate"
+                android:id="@+id/bdata"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/set_date" />
+                android:text="@string/set_date"
+                android:onClick="onButtonDate"/>
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonSave"
+            android:id="@+id/bSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_save" />
+            android:text="@string/button_save"
+            android:onClick="onButtonSave"/>
 
         <Button
-            android:id="@+id/buttonDelete"
+            android:id="@+id/bDelete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_delete" />
+            android:text="@string/button_delete"
+            android:onClick="onButtonDelete"/>
 
     </LinearLayout>
 

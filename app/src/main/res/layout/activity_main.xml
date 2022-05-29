@@ -53,21 +53,21 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/TaskList"
+                android:id="@+id/bTaskList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/task_list" />
 
             <Button
-                android:id="@+id/Today"
+                android:id="@+id/bToday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/today" />
 
             <Button
-                android:id="@+id/calendar"
+                android:id="@+id/bcalendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
