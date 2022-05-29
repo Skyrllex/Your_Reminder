@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -114,30 +113,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
             itemDone=itemView.findViewById(R.id.doneItem);
             itemDelete=itemView.findViewById(R.id.deleteItem);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TaskDetailsActivity.start((Activity) itemView.getContext(), task);
+            itemView.setOnClickListener(view -> TaskDetailsActivity.start((Activity) itemView.getContext(), task));
+
+            itemDone.setOnCheckedChangeListener((compoundButton, checked) -> {
+                if (!silentUpdate){
+                    task.done = checked;
+                    App.getInstance().getTaskDao().update(task);
                 }
+                updateStrokeOut();
             });
 
-            itemDone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
-                    if (!silentUpdate){
-                        task.done = checked;
-                        App.getInstance().getTaskDao().update(task);
-                    }
-                    updateStrokeOut();
-                }
-            });
-
-            itemDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    App.getInstance().getTaskDao().delete(task);
-                }
-            });
+            itemDelete.setOnClickListener(view -> App.getInstance().getTaskDao().delete(task));
 
         }
 

@@ -71,6 +71,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:hint="@string/text_date_and_time"
+                android:textColorHint="#757575"
                 android:textSize="16sp" />
 
             <Button

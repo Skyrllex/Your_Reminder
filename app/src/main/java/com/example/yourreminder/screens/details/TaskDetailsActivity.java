@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,12 +42,12 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_task_details);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+       /* Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         setTitle(getString(R.string.toolbar_edit));
-
+*/
         edittask = findViewById(R.id.editTask);
         editsubtask = findViewById(R.id.editSubTask);
 
@@ -69,9 +68,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
             task = new Task();
         }
 
-    }
-
-    private void setSupportActionBar(Toolbar toolbar) {
     }
 
     public void onButtonSave(View view)

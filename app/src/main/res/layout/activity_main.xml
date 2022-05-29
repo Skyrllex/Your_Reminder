@@ -43,7 +43,8 @@
                 android:layout_marginEnd="@dimen/fab_margin"
                 android:layout_marginBottom="16dp"
                 android:contentDescription="@string/new_task"
-                app:srcCompat="@android:drawable/ic_dialog_email" />
+                app:backgroundTint="#FFF7F7"
+                app:srcCompat="@drawable/picbuttonaddtask" />
         </FrameLayout>
 
         <LinearLayout
