@@ -9,4 +9,16 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="new_task">New task</string>
+    <string name="task_list">Task List</string>
+    <string name="today">Today</string>
+    <string name="calendar">Calendar</string>
+    <string name="text_task">Enter task</string>
+    <string name="text_subtask">Enter sub task</string>
+    <string name="button_save">Save</string>
+    <string name="button_delete">Delete</string>
+    <string name="set_date">edit</string>
+    <string name="dateandtime">Date and time are not selected</string>
+    <string name="textpriority">Priority lvl :</string>
+    <string name="lvl">0</string>
 </resources>
