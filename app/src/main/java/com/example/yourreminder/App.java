@@ -21,12 +21,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         instance = this;
 
         database = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "app-db-task").allowMainThreadQueries()
-                .build();
+                AppDatabase.class, "app-db-task").allowMainThreadQueries().build();
 
         taskDao = database.taskDao();
     }
@@ -43,7 +41,7 @@ public class App extends Application {
         return  taskDao;
     }
 
-    public void setTaskDao(TaskDao tasDao){
+    public void setTaskDao(TaskDao taskDao){
         this.taskDao = taskDao;
     }
 

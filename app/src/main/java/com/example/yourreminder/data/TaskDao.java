@@ -22,12 +22,12 @@ public interface TaskDao {
     LiveData<List<Task>> getAllLiveData();
 
 
-    @Query("SELECT * FROM Task WHERE calendar IN (:setDate)")
-    List<Task> loadAllByCalendar(int[] setDate);
+    @Query("SELECT * FROM Task WHERE calendar IN (:dateToday)")
+    List<Task> loadAllByCalendar(int[] dateToday);
 
-    @Query("SELECT * FROM Task WHERE texttask LIKE :searchtext Or " +
+   /*@Query("SELECT * FROM Task WHERE texttask LIKE :searchtext Or " +
             " textsubtask LIKE :searchtext")
-    Task findByText(String searchtext);
+    Task findByText(String searchtext);*/
 
     @Query("SELECT * FROM Task WHERE done=:done")
     Task findByDone(boolean done);

@@ -1,4 +1,5 @@
 package com.example.yourreminder.module;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -49,8 +50,9 @@ public class Task implements Parcelable {
         if (timectreate != task.timectreate) return false;
         if (calendar != task.calendar) return false;
         if (priority != task.priority) return false;
-        if (!textsubtask.equals(task.textsubtask)) return false;
-        return Objects.equals(texttask, task.texttask);
+        //if (!textsubtask.equals(task.textsubtask)) return false;
+        //return Objects.equals(texttask, task.texttask);
+        return Objects.equals(textsubtask, task.textsubtask);
 
     }
 
@@ -62,7 +64,7 @@ public class Task implements Parcelable {
         result = (31 * result) + ((textsubtask != null) ? textsubtask.hashCode() : 0);
         result = (31 * result) + (int) (timectreate ^ (timectreate>>>32));
         result = (31 * result) + (int) (calendar ^ (calendar>>>32));
-        //result = (31 * result) + (priority ^ (priority>>>32));
+        result = (31 * result) + (priority ^ (priority>>>32));
         result = (31 * result) + (done ? 1 : 0);
 
         return result;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
@@ -15,7 +16,7 @@
         android:layout_weight="1"
         android:minHeight="64sp"
         android:gravity="center_vertical"
-        tools:text="test text"/>
+        tools:text="test 222"/>
 
     <CheckBox
         android:id="@+id/doneItem"
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="16sp"
-        android:contentDescription="@string/deleteitem"
-        android:src="@drawable/imgonline_com_ua_resize_u5kzndmrof" />
+        android:contentDescription="@string/delete_item"
+        android:src="@drawable/delete" />
 
 </LinearLayout>

@@ -32,7 +32,6 @@
             android:layout_weight="2">
 
             <include
-                android:id="@+id/include"
                 layout="@layout/content_main" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -43,8 +42,8 @@
                 android:layout_marginEnd="@dimen/fab_margin"
                 android:layout_marginBottom="16dp"
                 android:contentDescription="@string/new_task"
-                app:backgroundTint="#FFF7F7"
-                app:srcCompat="@drawable/picbuttonaddtask" />
+                app:backgroundTint="@color/white"
+                app:srcCompat="@drawable/add_task" />
         </FrameLayout>
 
         <LinearLayout
