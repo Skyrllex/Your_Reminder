@@ -18,10 +18,12 @@ import com.example.yourreminder.module.Task;
 import com.example.yourreminder.screens.details.TaskDetailsActivity;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
 
-    private SortedList<Task> sortedList;
+    public SortedList<Task> sortedList;
+
     public Adapter(){
         sortedList = new SortedList<>(Task.class, new SortedList.Callback<Task>() {
             @Override
@@ -113,7 +115,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
             itemDone=itemView.findViewById(R.id.doneItem);
             itemDelete=itemView.findViewById(R.id.deleteItem);
 
-            itemView.setOnClickListener(view -> TaskDetailsActivity.start((Activity) itemView.getContext(), task));
+            itemView.setOnClickListener(view -> TaskDetailsActivity.start((Activity) Objects.requireNonNull(itemView).getContext(), task));
 
             itemDone.setOnCheckedChangeListener((compoundButton, checked) -> {
                 if (!silentUpdate){
@@ -127,7 +129,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
 
         }
 
-        public void bind(Task task){
+        public void bind(@NonNull Task task){
             this.task = task;
 
             itemTask.setText(task.texttask);
@@ -146,5 +148,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
             }
 
         }
+
     }
 }

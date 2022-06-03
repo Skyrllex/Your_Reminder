@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Your Reminder</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -19,6 +20,6 @@
     <string name="text_priority">Priority lvl :</string>
     <string name="lvl">0</string>
     <string name="toolbar_edit">Edit task</string>
-    <string name="deleteitem">delete task</string>
+    <string name="delete_item">delete task</string>
 
 </resources>

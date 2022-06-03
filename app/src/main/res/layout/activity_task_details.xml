@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -8,7 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="8sp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -71,7 +71,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:hint="@string/text_date_and_time"
-                android:textColorHint="#757575"
+                android:textColorHint="@color/graytext"
                 android:textSize="16sp" />
 
             <Button
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/set_date"
-                android:onClick="onButtonDate"/>
+                />
 
         </LinearLayout>
 
@@ -88,14 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/button_save"
-            android:onClick="onButtonSave"/>
+           />
 
         <Button
             android:id="@+id/bDelete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/button_delete"
-            android:onClick="onButtonDelete"/>
+            />
 
     </LinearLayout>
 

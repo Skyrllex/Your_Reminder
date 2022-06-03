@@ -9,7 +9,12 @@
         android:name=".App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YourReminder" >
+        android:theme="@style/Theme.YourReminder"
+        android:usesCleartextTraffic="true"
+        >
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3208674955854866~3777096275"/>
         <activity
             android:name=".screens.main.MainActivity"
             android:exported="true"
