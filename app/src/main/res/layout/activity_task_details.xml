@@ -14,8 +14,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.YourReminder.PopupOverlay" />
+            app:popupTheme="@style/Theme.YourReminder.AppBarOverlay" />
 
         <EditText
             android:id="@+id/editTask"

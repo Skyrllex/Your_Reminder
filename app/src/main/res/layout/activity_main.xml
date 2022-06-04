@@ -7,6 +7,7 @@
     tools:context=".screens.main.MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -31,8 +32,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2">
 
-            <include
-                layout="@layout/content_main" />
+            <include layout="@layout/content_main" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
@@ -43,7 +43,7 @@
                 android:layout_marginBottom="16dp"
                 android:contentDescription="@string/new_task"
                 app:backgroundTint="@color/white"
-                app:srcCompat="@drawable/add_task" />
+                app:srcCompat="@drawable/create_contact" />
         </FrameLayout>
 
         <LinearLayout
