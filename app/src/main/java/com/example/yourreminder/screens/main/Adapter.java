@@ -39,10 +39,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
                     return 1;
                 }
 
-                if (o2.priority > o1.priority){
+                /*if (o2.priority > o1.priority){
                     return 1;
                 }
-                return (int) (o1.calendar - o2.calendar);
+                return (int) (o1.calendar - o2.calendar);*/
+
+                return (int) (o2.priority - o1.priority);
             }
 
             @Override

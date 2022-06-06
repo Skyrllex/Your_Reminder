@@ -21,5 +21,6 @@
     <string name="lvl">0</string>
     <string name="toolbar_edit">Edit task</string>
     <string name="delete_item">delete task</string>
+    <string name="b_pet">PET</string>
 
 </resources>

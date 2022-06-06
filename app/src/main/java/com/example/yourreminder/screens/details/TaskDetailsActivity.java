@@ -35,16 +35,16 @@ public class TaskDetailsActivity extends AppCompatActivity {
     private Button bsave;
 
 
-    public static void start(Activity caller, Task task){
-        Intent intent = new Intent (caller, TaskDetailsActivity.class);
-        if (task!=null){
+    public static void start(Activity caller, Task task) {
+        Intent intent = new Intent(caller, TaskDetailsActivity.class);
+        if (task != null) {
             intent.putExtra(EXTRA_TASK, task);
         }
         caller.startActivity(intent);
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState){
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_task_details);
@@ -59,14 +59,35 @@ public class TaskDetailsActivity extends AppCompatActivity {
         edittask = findViewById(R.id.editTask);
         editsubtask = findViewById(R.id.editSubTask);
 
-        priotitylvl = findViewById(R.id.textpriority);
-        seekbar=findViewById(R.id.seekBar);
-        textdatatime = findViewById(R.id.textDateandTime);
-
-
         bdate = findViewById(R.id.bdata);
         bsave = findViewById(R.id.bSave);
         bdelete = findViewById(R.id.bDelete);
+
+        priotitylvl = findViewById(R.id.textlvl);
+        seekbar = findViewById(R.id.seekBar);
+        textdatatime = findViewById(R.id.textDateandTime);
+
+
+
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                priotitylvl.setText(String.valueOf(progress));
+               }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+
+        });
+
 
         bdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,13 +110,24 @@ public class TaskDetailsActivity extends AppCompatActivity {
             }
         });
 
+        bdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onButtonDate();
+            }
+        });
 
 
-        if (getIntent().hasExtra(EXTRA_TASK)){
+
+        if (getIntent().hasExtra(EXTRA_TASK)) {
             task = getIntent().getParcelableExtra(EXTRA_TASK);
             edittask.setText(task.texttask);
             editsubtask.setText(task.textsubtask);
-          //  priotitylvl.setText((int)task.priority);
+
+            if (task.priority > 0) {
+                priotitylvl.setText(Integer.toString(task.priority));
+                seekbar.setProgress(task.priority);
+            }
             //textdatatime.setText((int) task.calendar);
         } else {
             task = new Task();
@@ -103,14 +135,15 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
     }
 
-    public void onButtonSave()
-    {
-        if (edittask.getText().length()>0){
-            task.texttask=edittask.getText().toString();
-            task.textsubtask=editsubtask.getText().toString();
-            task.done=false;
+    public void onButtonSave() {
+        if (edittask.getText().length() > 0) {
+            task.texttask = edittask.getText().toString();
+            task.textsubtask = editsubtask.getText().toString();
+            task.done = false;
             task.timectreate = System.currentTimeMillis();
-            task.priority = 8;//Integer.parseInt(priotitylvl.getText().toString());
+            if (Integer.parseInt(priotitylvl.getText().toString()) > 0 ) {
+            task.priority = Integer.parseInt(priotitylvl.getText().toString());}
+
             task.calendar = System.currentTimeMillis();//Integer.parseInt(textdatatime.getText().toString());
             if (getIntent().hasExtra(EXTRA_TASK)) {
                 App.getInstance().getTaskDao().update(task);
@@ -121,22 +154,24 @@ public class TaskDetailsActivity extends AppCompatActivity {
         finish();
     }
 
-    public void onButtonDelete( )
-    {
-        if (getIntent().hasExtra(EXTRA_TASK)){
+    public void onButtonDelete() {
+        if (getIntent().hasExtra(EXTRA_TASK)) {
             App.getInstance().getTaskDao().delete(task);
         }
         finish();
     }
-    public void onButtonDate( )
-    {
 
+    public void onButtonDate() {
 
     }
+
     @Override
     public boolean onSupportNavigateUp() {
         finish();
         return true;
     }
 
+
+
 }
+
